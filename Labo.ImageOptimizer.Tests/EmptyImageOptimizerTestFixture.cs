@@ -14,7 +14,7 @@
         [Test]
         public void Optimize()
         {
-            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", "fig4.gif");
+            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", "480px-Fringed-Loosestrife_flowers.gif");
             string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
 
             EmptyImageOptimizer pngOptimizer = new EmptyImageOptimizer();
@@ -32,7 +32,7 @@
         [Test]
         public void OptimizeByFilePath()
         {
-            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", "fig4.gif");
+            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", "480px-Fringed-Loosestrife_flowers.gif");
             string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
 
             EmptyImageOptimizer pngOptimizer = new EmptyImageOptimizer();

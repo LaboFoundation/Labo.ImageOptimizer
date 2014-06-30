@@ -12,8 +12,8 @@
     {
         [Test, Sequential]
         public void Optimize(
-            [Values("KarimNafatni10.png", "KarimNafatni11.png", "KarimNafatni3.png",
-                "KarimNafatni5.png", "KarimNafatni7.png", "KarimNafatni8.png")]
+            [Values("450px-Almond_flower.png", "450px-Almond_flowers.png",
+                "800px-Red_Flower.png", "Taif_Flowers.PNG")]
                 string imageName,
             [Values(PngImageOptimizationSpeed.Fast, PngImageOptimizationSpeed.Medium, PngImageOptimizationSpeed.Slow)]
             PngImageOptimizationSpeed optimizationSpeed)

@@ -13,8 +13,8 @@
     {
         [Test, Sequential]
         public void Optimize(
-            [Values("freeimage-1565353-high.jpg", "freeimage-1634087-web.jpg", "freeimage-2197584-web.jpg",
-                    "freeimage-2387463-web.jpg", "freeimage-2979180-web.jpg", "freeimage-8261552-high.jpg")]
+            [Values("freeimage-1634087-web.jpg", "freeimage-2197584-web.jpg",
+                    "freeimage-2387463-web.jpg", "freeimage-2979180-web.jpg")]
             string imageName)
         {
             string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", imageName);

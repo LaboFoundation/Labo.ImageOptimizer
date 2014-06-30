@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B40BB7FA-765A-4756-A99E-8C4E9F26228A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Labo.ImageOptimizer.NET4</RootNamespace>
+    <AssemblyName>Labo.ImageOptimizer.NET4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysisRules\Common.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysisRules\Common.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Magick.NET-x86">
+      <HintPath>..\sharedlibs\Magick.NET-x86.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Labo.ImageOptimizer\DefaultImageOptimizerFactory.cs">
+      <Link>DefaultImageOptimizerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\IImageOptimizer.cs">
+      <Link>IImageOptimizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\IImageOptimizerFactory.cs">
+      <Link>IImageOptimizerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\ImageFormat.cs">
+      <Link>ImageFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\ImageFormatHelper.cs">
+      <Link>ImageFormatHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\ImageOptimization.cs">
+      <Link>ImageOptimization.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\Optimizers\BaseImageOptimizer.cs">
+      <Link>Optimizers\BaseImageOptimizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\Optimizers\EmptyImageOptimizer.cs">
+      <Link>Optimizers\EmptyImageOptimizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\Optimizers\JpegImageOptimizer.cs">
+      <Link>Optimizers\JpegImageOptimizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\Optimizers\PngImageOptimizationSpeed.cs">
+      <Link>Optimizers\PngImageOptimizationSpeed.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\Optimizers\PngImageOptimizer.cs">
+      <Link>Optimizers\PngImageOptimizer.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Labo.ImageOptimizer\Tools\jpegtran.exe">
+      <Link>Tools\jpegtran.exe</Link>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer\Tools\optipng.exe">
+      <Link>Tools\optipng.exe</Link>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer\Tools\pngout.exe">
+      <Link>Tools\pngout.exe</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

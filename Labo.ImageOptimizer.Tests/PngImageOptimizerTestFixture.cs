@@ -19,8 +19,8 @@
             [Values(PngImageOptimizationSpeed.Fast, PngImageOptimizationSpeed.Medium, PngImageOptimizationSpeed.Slow)]
             PngImageOptimizationSpeed optimizationSpeed)
         {
-            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", imageName);
-            string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", imageName);
+            string opimizedImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
 
             PngImageOptimizer pngOptimizer = new PngImageOptimizer(LaboImageOptimizationConfig.Instance, optimizationSpeed);
             byte[] optimizedImageData = pngOptimizer.Optimize(File.ReadAllBytes(imagePath));

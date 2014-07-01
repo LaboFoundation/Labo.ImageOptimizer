@@ -68,8 +68,8 @@ namespace Labo.ImageOptimizer.Optimizers
         /// <param name="outputImagePath">The output image path.</param>
         public override void Optimize(string inputImagePath, string outputImagePath)
         {
-            RunProcess(string.IsNullOrWhiteSpace(m_Configuration.PngOutApplicationPath) ? Path.Combine(Environment.CurrentDirectory, "Tools", "pngout.exe") : m_Configuration.PngOutApplicationPath, string.Format(CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", inputImagePath, outputImagePath));
-            RunProcess(string.IsNullOrWhiteSpace(m_Configuration.OptiPngApplicationPath) ? Path.Combine(Environment.CurrentDirectory, "Tools", "optipng.exe") : m_Configuration.OptiPngApplicationPath, string.Format(CultureInfo.InvariantCulture, "-force {1} \"{0}\"", outputImagePath, GetOptimizationSpeedArgument()));
+            RunProcess(string.IsNullOrWhiteSpace(m_Configuration.PngOutApplicationPath) ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tools", "pngout.exe") : m_Configuration.PngOutApplicationPath, string.Format(CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", inputImagePath, outputImagePath));
+            RunProcess(string.IsNullOrWhiteSpace(m_Configuration.OptiPngApplicationPath) ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tools", "optipng.exe") : m_Configuration.OptiPngApplicationPath, string.Format(CultureInfo.InvariantCulture, "-force {1} \"{0}\"", outputImagePath, GetOptimizationSpeedArgument()));
         }
 
         /// <summary>

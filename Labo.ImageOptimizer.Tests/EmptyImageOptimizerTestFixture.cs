@@ -14,8 +14,8 @@
         [Test]
         public void Optimize()
         {
-            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", "480px-Fringed-Loosestrife_flowers.gif");
-            string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "480px-Fringed-Loosestrife_flowers.gif");
+            string opimizedImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
 
             EmptyImageOptimizer pngOptimizer = new EmptyImageOptimizer();
             byte[] imageData = File.ReadAllBytes(imagePath);
@@ -32,8 +32,8 @@
         [Test]
         public void OptimizeByFilePath()
         {
-            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", "480px-Fringed-Loosestrife_flowers.gif");
-            string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "480px-Fringed-Loosestrife_flowers.gif");
+            string opimizedImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
 
             EmptyImageOptimizer pngOptimizer = new EmptyImageOptimizer();
             pngOptimizer.Optimize(imagePath, opimizedImagePath);

@@ -18,8 +18,8 @@
                     "freeimage-2387463-web.jpg", "freeimage-2979180-web.jpg")]
             string imageName)
         {
-            string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", imageName);
-            string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", imageName);
+            string opimizedImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
             
             JpegImageOptimizer jpegOptimizer = new JpegImageOptimizer(LaboImageOptimizationConfig.Instance);
             byte[] optimizedImageData = jpegOptimizer.Optimize(File.ReadAllBytes(imagePath));

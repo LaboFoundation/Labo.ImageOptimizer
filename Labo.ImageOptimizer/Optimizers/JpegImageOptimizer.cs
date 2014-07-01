@@ -61,7 +61,7 @@ namespace Labo.ImageOptimizer.Optimizers
         /// <param name="outputImagePath">The output image path.</param>
         public override void Optimize(string inputImagePath, string outputImagePath)
         {
-            string jpegTranPath = string.IsNullOrWhiteSpace(m_Configuration.JpegTranApplicationPath) ? Path.Combine(Environment.CurrentDirectory, "Tools", "jpegtran.exe") : m_Configuration.JpegTranApplicationPath;
+            string jpegTranPath = string.IsNullOrWhiteSpace(m_Configuration.JpegTranApplicationPath) ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tools", "jpegtran.exe") : m_Configuration.JpegTranApplicationPath;
 
             using (Process process = new Process())
             {

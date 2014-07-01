@@ -131,7 +131,7 @@ namespace Labo.ImageOptimizer.Configuration
         /// <returns>The application path.</returns>
         private static string GetApplicationPath(string applicationPathString)
         {
-            return applicationPathString.Replace("%EnvironmentCurrentDirectory%", Environment.CurrentDirectory);
+            return applicationPathString.Replace("%BASEDIRECTORY%", AppDomain.CurrentDomain.BaseDirectory);
         }
 
         /// <summary>

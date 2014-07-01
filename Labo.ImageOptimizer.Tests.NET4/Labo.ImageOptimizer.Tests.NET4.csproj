@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8BFDE4E-C0D4-4512-AB48-8A4059F7843A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Labo.ImageOptimizer.Tests.NET4</RootNamespace>
+    <AssemblyName>Labo.ImageOptimizer.Tests.NET4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\sharedlibs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Labo.ImageOptimizer.Tests\EmptyImageOptimizerTestFixture.cs">
+      <Link>EmptyImageOptimizerTestFixture.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer.Tests\JpegImageOptimizerTestFixture.cs">
+      <Link>JpegImageOptimizerTestFixture.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer.Tests\PngImageOptimizerTestFixture.cs">
+      <Link>PngImageOptimizerTestFixture.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\450px-Almond_flower.png">
+      <Link>Images\450px-Almond_flower.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\450px-Almond_flowers.png">
+      <Link>Images\450px-Almond_flowers.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\480px-Fringed-Loosestrife_flowers.gif">
+      <Link>Images\480px-Fringed-Loosestrife_flowers.gif</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\800px-Red_Flower.png">
+      <Link>Images\800px-Red_Flower.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\freeimage-1634087-web.jpg">
+      <Link>Images\freeimage-1634087-web.jpg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\freeimage-2197584-web.jpg">
+      <Link>Images\freeimage-2197584-web.jpg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\freeimage-2387463-web.jpg">
+      <Link>Images\freeimage-2387463-web.jpg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\freeimage-2979180-web.jpg">
+      <Link>Images\freeimage-2979180-web.jpg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Labo.ImageOptimizer.Tests\Images\Taif_Flowers.PNG">
+      <Link>Images\Taif_Flowers.PNG</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Labo.ImageOptimizer.NET4\Labo.ImageOptimizer.NET4.csproj">
+      <Project>{b40bb7fa-765a-4756-a99e-8c4e9f26228a}</Project>
+      <Name>Labo.ImageOptimizer.NET4</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

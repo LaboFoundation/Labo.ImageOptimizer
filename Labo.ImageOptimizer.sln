@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3BA1CE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labo.ImageOptimizer.NET4", "Labo.ImageOptimizer.NET4\Labo.ImageOptimizer.NET4.csproj", "{B40BB7FA-765A-4756-A99E-8C4E9F26228A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labo.ImageOptimizer.Tests.NET4", "Labo.ImageOptimizer.Tests.NET4\Labo.ImageOptimizer.Tests.NET4.csproj", "{A8BFDE4E-C0D4-4512-AB48-8A4059F7843A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{B40BB7FA-765A-4756-A99E-8C4E9F26228A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B40BB7FA-765A-4756-A99E-8C4E9F26228A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B40BB7FA-765A-4756-A99E-8C4E9F26228A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8BFDE4E-C0D4-4512-AB48-8A4059F7843A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8BFDE4E-C0D4-4512-AB48-8A4059F7843A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8BFDE4E-C0D4-4512-AB48-8A4059F7843A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8BFDE4E-C0D4-4512-AB48-8A4059F7843A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

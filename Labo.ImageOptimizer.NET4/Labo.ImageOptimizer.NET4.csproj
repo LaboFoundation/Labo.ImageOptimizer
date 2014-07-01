@@ -38,6 +38,7 @@
       <HintPath>..\sharedlibs\Magick.NET-x86.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Labo.ImageOptimizer\Configuration\IImageOptimizationConfiguration.cs">
+      <Link>Configuration\IImageOptimizationConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Labo.ImageOptimizer\Configuration\LaboImageOptimizationConfig.cs">
+      <Link>Configuration\LaboImageOptimizationConfig.cs</Link>
+    </Compile>
     <Compile Include="..\Labo.ImageOptimizer\DefaultImageOptimizerFactory.cs">
       <Link>DefaultImageOptimizerFactory.cs</Link>
     </Compile>
@@ -85,12 +92,15 @@
   <ItemGroup>
     <Content Include="..\Labo.ImageOptimizer\Tools\jpegtran.exe">
       <Link>Tools\jpegtran.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Labo.ImageOptimizer\Tools\optipng.exe">
       <Link>Tools\optipng.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Labo.ImageOptimizer\Tools\pngout.exe">
       <Link>Tools\pngout.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

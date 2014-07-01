@@ -3,6 +3,7 @@
     using System;
     using System.IO;
 
+    using Labo.ImageOptimizer.Configuration;
     using Labo.ImageOptimizer.Optimizers;
 
     using NUnit.Framework;
@@ -21,7 +22,7 @@
             string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", imageName);
             string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
 
-            PngImageOptimizer pngOptimizer = new PngImageOptimizer(optimizationSpeed);
+            PngImageOptimizer pngOptimizer = new PngImageOptimizer(LaboImageOptimizationConfig.Instance, optimizationSpeed);
             byte[] optimizedImageData = pngOptimizer.Optimize(File.ReadAllBytes(imagePath));
             File.WriteAllBytes(opimizedImagePath, optimizedImageData);
 

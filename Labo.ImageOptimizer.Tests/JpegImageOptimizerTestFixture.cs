@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using System.IO;
 
+    using Labo.ImageOptimizer.Configuration;
     using Labo.ImageOptimizer.Optimizers;
 
     using NUnit.Framework;
@@ -20,7 +21,7 @@
             string imagePath = Path.Combine(Environment.CurrentDirectory, "Images", imageName);
             string opimizedImagePath = Path.Combine(Environment.CurrentDirectory, "Images", string.Format("{0}-optimized{1}", Path.GetFileNameWithoutExtension(imagePath), Path.GetExtension(imagePath)));
             
-            JpegImageOptimizer jpegOptimizer = new JpegImageOptimizer();
+            JpegImageOptimizer jpegOptimizer = new JpegImageOptimizer(LaboImageOptimizationConfig.Instance);
             byte[] optimizedImageData = jpegOptimizer.Optimize(File.ReadAllBytes(imagePath));
             File.WriteAllBytes(opimizedImagePath, optimizedImageData);
 

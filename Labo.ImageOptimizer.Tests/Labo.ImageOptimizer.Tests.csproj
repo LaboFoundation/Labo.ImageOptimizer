@@ -54,7 +54,9 @@
     <Content Include="Images\450px-Almond_flowers.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\480px-Fringed-Loosestrife_flowers.gif" />
+    <Content Include="Images\480px-Fringed-Loosestrife_flowers.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\800px-Red_Flower.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -79,6 +81,11 @@
       <Project>{FA9FB535-E81A-4378-B327-1151C81DF640}</Project>
       <Name>Labo.ImageOptimizer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

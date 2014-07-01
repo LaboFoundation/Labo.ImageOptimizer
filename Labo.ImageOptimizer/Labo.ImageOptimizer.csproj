@@ -38,6 +38,7 @@
       <HintPath>..\sharedlibs\Magick.NET-x86.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\IImageOptimizationConfiguration.cs" />
+    <Compile Include="Configuration\LaboImageOptimizationConfig.cs" />
     <Compile Include="ImageOptimization.cs" />
     <Compile Include="Optimizers\BaseImageOptimizer.cs" />
     <Compile Include="Optimizers\EmptyImageOptimizer.cs" />

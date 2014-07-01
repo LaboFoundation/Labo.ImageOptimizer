@@ -33,11 +33,18 @@ namespace Labo.ImageOptimizer.Optimizers
     using System.Globalization;
     using System.IO;
 
+    using Labo.ImageOptimizer.Configuration;
+
     /// <summary>
     /// Png image optimizer class.
     /// </summary>
     public sealed class PngImageOptimizer : BaseImageOptimizer
     {
+        /// <summary>
+        /// The configuration
+        /// </summary>
+        private readonly IImageOptimizationConfiguration m_Configuration;
+
         /// <summary>
         /// The image optimization speed
         /// </summary>
@@ -46,9 +53,11 @@ namespace Labo.ImageOptimizer.Optimizers
         /// <summary>
         /// Initializes a new instance of the <see cref="PngImageOptimizer"/> class.
         /// </summary>
+        /// <param name="configuration">The configuration.</param>
         /// <param name="optimizationSpeed">The optimization speed.</param>
-        public PngImageOptimizer(PngImageOptimizationSpeed optimizationSpeed = PngImageOptimizationSpeed.Slow)
+        public PngImageOptimizer(IImageOptimizationConfiguration configuration, PngImageOptimizationSpeed optimizationSpeed = PngImageOptimizationSpeed.Slow)
         {
+            m_Configuration = configuration;
             m_OptimizationSpeed = optimizationSpeed;
         }
 
@@ -59,8 +68,8 @@ namespace Labo.ImageOptimizer.Optimizers
         /// <param name="outputImagePath">The output image path.</param>
         public override void Optimize(string inputImagePath, string outputImagePath)
         {
-            RunProcess(Path.Combine(Environment.CurrentDirectory, "Tools", "pngout.exe"), string.Format(CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", inputImagePath, outputImagePath));
-            RunProcess(Path.Combine(Environment.CurrentDirectory, "Tools", "optipng.exe"), string.Format(CultureInfo.InvariantCulture, "-force {1} \"{0}\"", outputImagePath, GetOptimizationSpeedArgument()));
+            RunProcess(string.IsNullOrWhiteSpace(m_Configuration.PngOutApplicationPath) ? Path.Combine(Environment.CurrentDirectory, "Tools", "pngout.exe") : m_Configuration.PngOutApplicationPath, string.Format(CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", inputImagePath, outputImagePath));
+            RunProcess(string.IsNullOrWhiteSpace(m_Configuration.OptiPngApplicationPath) ? Path.Combine(Environment.CurrentDirectory, "Tools", "optipng.exe") : m_Configuration.OptiPngApplicationPath, string.Format(CultureInfo.InvariantCulture, "-force {1} \"{0}\"", outputImagePath, GetOptimizationSpeedArgument()));
         }
 
         /// <summary>

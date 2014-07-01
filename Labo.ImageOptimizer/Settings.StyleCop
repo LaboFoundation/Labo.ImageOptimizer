@@ -1,8 +1,10 @@
 <StyleCopSettings Version="105">
   <GlobalSettings>
     <CollectionProperty Name="RecognizedWords">
+      <Value>jpegtran</Value>
       <Value>optipng</Value>
       <Value>png</Value>
+      <Value>pngout</Value>
     </CollectionProperty>
   </GlobalSettings>
   <Analyzers>

@@ -32,6 +32,7 @@ namespace Labo.ImageOptimizer
     using System.Collections.Generic;
     using System.IO;
 
+    using Labo.ImageOptimizer.Configuration;
     using Labo.ImageOptimizer.Optimizers;
 
     /// <summary>
@@ -44,8 +45,8 @@ namespace Labo.ImageOptimizer
         /// </summary>
         private static readonly IDictionary<ImageFormat, IImageOptimizer> s_ImageOptimizers = new Dictionary<ImageFormat, IImageOptimizer>
                                                                                                   {
-                                                                                                      { ImageFormat.Jpeg, new JpegImageOptimizer() },
-                                                                                                      { ImageFormat.Png, new PngImageOptimizer() },
+                                                                                                      { ImageFormat.Jpeg, new JpegImageOptimizer(LaboImageOptimizationConfig.Instance) },
+                                                                                                      { ImageFormat.Png, new PngImageOptimizer(LaboImageOptimizationConfig.Instance) },
                                                                                                       { ImageFormat.Unknown, new EmptyImageOptimizer() }
                                                                                                   };
 

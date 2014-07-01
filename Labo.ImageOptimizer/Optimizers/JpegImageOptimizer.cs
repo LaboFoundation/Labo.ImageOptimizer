@@ -33,11 +33,27 @@ namespace Labo.ImageOptimizer.Optimizers
     using System.Globalization;
     using System.IO;
 
+    using Labo.ImageOptimizer.Configuration;
+
     /// <summary>
     /// The jpeg image optimizer class.
     /// </summary>
     public sealed class JpegImageOptimizer : BaseImageOptimizer
     {
+        /// <summary>
+        /// The configuration
+        /// </summary>
+        private readonly IImageOptimizationConfiguration m_Configuration;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JpegImageOptimizer"/> class.
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        public JpegImageOptimizer(IImageOptimizationConfiguration configuration)
+        {
+            m_Configuration = configuration;
+        }
+
         /// <summary>
         /// Optimizes the specified input image and writes the output to the output image path.
         /// </summary>
@@ -45,7 +61,7 @@ namespace Labo.ImageOptimizer.Optimizers
         /// <param name="outputImagePath">The output image path.</param>
         public override void Optimize(string inputImagePath, string outputImagePath)
         {
-            string jpegTranPath = Path.Combine(Environment.CurrentDirectory, "Tools", "jpegtran.exe");
+            string jpegTranPath = string.IsNullOrWhiteSpace(m_Configuration.JpegTranApplicationPath) ? Path.Combine(Environment.CurrentDirectory, "Tools", "jpegtran.exe") : m_Configuration.JpegTranApplicationPath;
 
             using (Process process = new Process())
             {
